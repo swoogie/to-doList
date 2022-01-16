@@ -1,13 +1,9 @@
 # to-doList
-A classic to-do list
+### A classic to-do list
+Did it as a refresher. Still have to do some work with styling.
 
-
-Did it as a refresher
-
-
-Features include:
-> Add button
-> 
-> Remove button
-> 
-> Input Validation
+### Features include:
+- Add button
+- Add task with Enter key
+- Remove button 
+- Basic input Validation
