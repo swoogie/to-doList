@@ -8,23 +8,30 @@ class Task {
     this.deleteBtn.className = "deleteBtn";
     this.deleteBtn.textContent = "X";
     this.deleteBtn.addEventListener("click", () => {
-        this.element.remove();
-    })
+      this.element.remove();
+    });
     this.element = document.createElement("Li");
     this.element.textContent = content;
     this.element.appendChild(this.deleteBtn);
-    
   }
+}
+
+function addTask() {
+  let inputValue = inputField.value;
+  inputField.value = "";
+  tasks.push(new Task(inputValue));
+
+  taskList.appendChild(tasks[taskIndex].element);
+  taskIndex++;
 }
 
 let tasks = new Array();
 let taskIndex = 0;
 
-addBtn.addEventListener("click", () => {
-  let inputValue = inputField.value;
+addBtn.addEventListener("click", addTask);
 
-  tasks.push(new Task(inputValue));
-
-  taskList.appendChild(tasks[taskIndex].element);
-  taskIndex++;
+inputField.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addTask();
+  }
 });
