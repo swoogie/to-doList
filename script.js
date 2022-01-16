@@ -19,19 +19,39 @@ class Task {
 function addTask() {
   let inputValue = inputField.value;
   inputField.value = "";
+  inputValue =
+    inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase();
   tasks.push(new Task(inputValue));
 
   taskList.appendChild(tasks[taskIndex].element);
   taskIndex++;
 }
 
+function inputIsValid() {
+  let inputValue = inputField.value;
+  try {
+    if (inputValue != "") {
+      return true;
+    } else throw "Invalid input";
+  } catch (err) {
+    let msg = document.querySelector("#errorMsg");
+    msg.textContent = err;
+    msg.style.color = "#fff";
+    setTimeout(() => {
+      msg.textContent = "";
+    }, 2000);
+  }
+}
+
 let tasks = new Array();
 let taskIndex = 0;
 
-addBtn.addEventListener("click", addTask);
+addBtn.addEventListener("click", () => {
+  if (inputIsValid()) addTask();
+});
 
 inputField.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    addTask();
+    if (inputIsValid()) addTask();
   }
 });

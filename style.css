@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100%;
+  background: linear-gradient(#1f262e, 80%, #121820);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 100px;
+}
+#inputDiv {
+  display: flex;
+  flex-direction: row;
+}
+ul {
+  list-style-type: none; 
+  color: #fff;
+  font-size: 13px;
+}
+li {
+  margin: 20px;
+  background: #171b20;
+  padding: 0px 0px 0px 10px;
+  border-radius: 4px;
+}
+/* .deleteBtn {
+    float: right;   
+} */
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  background-color: #171b20;
+  color: #fff;
+  border-radius: 4px;
+  transition: 0.2s;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: 1px solid #f60;
+}
+
+input[type="text"]:hover {
+    background-color: #191e22;
+} 
+
+button {
+  background-color: #f60;
+  color: white;
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: background-color, 0.2s;
+}
+button:hover {
+  transition: background-color, 0.2s;
+  background-color: #b44800;
+}
